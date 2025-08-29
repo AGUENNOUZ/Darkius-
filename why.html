@@ -10,16 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1:#0f1724;
-      --bg2:#0b1220;
-      --accent:#7c3aed;
-      --muted:#9aa4b2;
+      --emphasis:#ec4899; /* وردي */
+      --emphasis2:#7e22ce; /* بنفسجي */
+      --muted:#cbd5e1;
+      --card:rgba(255,255,255,0.06);
       --radius:14px;
       --container:900px;
       color-scheme: dark;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:'Cairo',system-ui; background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e6eef8;line-height:1.6}
+    body{
+      margin:0;
+      font-family:'Cairo',system-ui;
+      background: radial-gradient(circle at top left, #1e3a8a 0%, transparent 40%),
+                  radial-gradient(circle at bottom right, #7e22ce 0%, transparent 40%),
+                  radial-gradient(circle at top right, #ec4899 0%, transparent 35%),
+                  linear-gradient(135deg, #0a0f1c, #1a1034);
+      background-attachment: fixed;
+      color:#f1f5f9;
+      line-height:1.7
+    }
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--container);margin:0 auto;padding:28px}
     h1,h2,h3{margin:0 0 14px 0}
@@ -28,13 +38,37 @@
     header h1{font-size:32px;color:#fff}
     header p{color:var(--muted);max-width:600px;margin:12px auto}
 
-    .reasons{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
-    .card{background:rgba(255,255,255,0.04);padding:20px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.05)}
+    .reasons{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:28px
+    }
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 8px 22px rgba(0,0,0,0.4);
+      transition:0.3s
+    }
+    .card:hover{background:rgba(255,255,255,0.1)}
     .card h3{margin:0 0 8px 0;font-size:20px;color:#fff}
     .card p{color:var(--muted);font-size:15px}
 
     .cta{text-align:center;margin-top:40px}
-    .btn{display:inline-block;padding:14px 24px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#041025;font-weight:700;font-size:16px}
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--emphasis),var(--emphasis2));
+      color:#fff;
+      font-weight:700;
+      font-size:16px;
+      border:none;
+      transition:0.3s
+    }
+    .btn:hover{opacity:0.9}
 
     footer{text-align:center;margin-top:60px;color:var(--muted);font-size:14px}
 
